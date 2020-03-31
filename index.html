@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Circunferencia</title>
+    <script type="text/javascript">
+        function draw() {
+
+            var resultado = document.getElementById('resultado');
+            var radio = document.getElementById('radio').value;
+            var equis = document.getElementById('equis').value;
+            var ye = document.getElementById('ye').value;
+            var ecRadio = document.getElementById('ecRadio').value;
+            var ecEquis = document.getElementById('ecEquis').value;
+            var ecYe = document.getElementById('ecYe').value;
+            var equisS = equis - equis - equis;
+            var yeS = ye - ye - ye;
+            var radioC = radio * radio;
+
+            if (radio == "" || equis == "" || ye == "" || ecRadio == "" || ecEquis == "" || ecYe == "") {
+                resultado.innerHTML = "Llena todos los campos";
+            }
+            else {
+                if (ecEquis == equisS && ecYe == yeS && ecRadio == radioC) {
+                    resultado.innerHTML = "¡Correcto!"
+                }
+                else {
+                    resultado.innerHTML = "Algo está mal, revisa tus datos";
+                }
+            }
+        }
+    </script>
+    <style type="text/css">
+        html {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #resultado {
+            color: red;
+        }
+
+        input[type=number] {
+            width: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p></p>
+        <label>Coordenadas del centro</label>
+        <p><label> X = </label>
+            <input type="number" name="" id="equis">
+            <label> Y =</label>
+            <input type="number" name="" id="ye"></p>
+        <label> Radio =</label>
+        <input type="number" name="" id="radio"><br>
+        <label> Ecuación </label>
+        <p>(x<input type="number" name="" id="ecEquis">)²+(y<input type="number" name="" id="ecYe">)²=<input
+                type="number" name="" id="ecRadio"></p>
+        <input type="button" onclick="draw()" value="Verificar">
+    </div>
+    <p id="resultado"></p>
+</body>
+
+</html>
