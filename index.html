@@ -44,7 +44,7 @@
         input[type=number],[type=text] {
             width: 40px;
         }
-        .content{
+        div{
           width: 100vw;
          }
     </style>
@@ -52,17 +52,21 @@
 
 <body>
     <div class="content">
-        <p></p>
+            
+        <p>Instrucciones:<br>
+        Escribe las coordenadas del centro y la medida del radio, para después escribir la ecuación cartesiana de la circunferencia. Presiona el botón para verificar.
+        </p>
+    
         <label>Coordenadas del centro</label>
-        <p><label> X = </label>
+        <div><label> X = </label>
             <input type="text" name="" id="equis">
             <label> Y =</label>
-            <input type="text" name="" id="ye"></p>
+            <input type="text" name="" id="ye"></div>
         <label> Radio =</label>
-        <input type="text" name="" id="radio"><br>
+        <input type="text" name="" id="radio"><br><br>
         <label> Ecuación </label>
-        <p>(x<input type="text" name="" id="ecEquis">)²+(y<input type="text" name="" id="ecYe">)²=<input
-                type="text" name="" id="ecRadio"></p>
+        <div>(x<input type="text" name="" id="ecEquis">)²+(y<input type="text" name="" id="ecYe">)²=<input
+                type="text" name="" id="ecRadio"></div>
         <input type="button" onclick="draw()" value="Verificar">
     </div>
     <p id="resultado"></p>
