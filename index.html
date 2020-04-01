@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Circunferencia</title>
     <script type="text/javascript">
+        var contador = 0;
         function draw() {
 
             var resultado = document.getElementById('resultado');
@@ -18,16 +19,19 @@
             var equisS = equis - equis - equis;
             var yeS = ye - ye - ye;
             var radioC = radio * radio;
-
             if (radio == "" || equis == "" || ye == "" || ecRadio == "" || ecEquis == "" || ecYe == "") {
-                resultado.innerHTML = "Llena todos los campos";
+                contador = contador + 1;
+                resultado.innerHTML = contador + "Llena todos los campos";
             }
             else {
                 if (ecEquis == equisS && ecYe == yeS && ecRadio == radioC) {
-                    resultado.innerHTML = "¡Correcto!"
+                    contador = contador + 1;
+                    resultado.innerHTML = contador + "¡Correcto!"
+                    contador = 0;
                 }
                 else {
-                    resultado.innerHTML = "Algo está mal, revisa tus datos";
+                    contador = contador + 1;
+                    resultado.innerHTML = contador + "Algo está mal, revisa tus datos";
                 }
             }
         }
@@ -42,17 +46,21 @@
             color: red;
         }
 
-        input[type=number],[type=text] {
+        input[type=number],
+        [type=text] {
             width: 40px;
         }
-       .name{
+
+        .name {
             width: 100%;
         }
+
         @media (min-width: 900px) {
-            p{
-                width:34%;
+            p {
+                width: 34%;
             }
-            .name{
+
+            .name {
                 width: 200px;
             }
         }
@@ -61,14 +69,15 @@
 
 <body>
     <div class="content">
-        <label for="">Nombre completo:</label> 
+        <label for="">Nombre completo:</label>
         <input type="text" class="name">
         <label for="">Grupo:</label>
         <input type="text">
         <p>Instrucciones:<br>
-        Escribe las coordenadas del centro y la medida del radio, para después escribir la ecuación cartesiana de la circunferencia. Presiona el botón para verificar.
+            Escribe las coordenadas del centro y la medida del radio, para después escribir la ecuación cartesiana de la
+            circunferencia. Presiona el botón para verificar.
         </p>
-    
+
         <label>Coordenadas del centro</label>
         <div><label> X = </label>
             <input type="text" name="" id="equis">
@@ -77,10 +86,11 @@
         <label> Radio =</label>
         <input type="text" name="" id="radio"><br><br>
         <label> Ecuación </label>
-        <div>(x<input type="text" name="" id="ecEquis">)²+(y<input type="text" name="" id="ecYe">)²=<input
-                type="text" name="" id="ecRadio"></div>
+        <div>(x<input type="text" name="" id="ecEquis">)²+(y<input type="text" name="" id="ecYe">)²=<input type="text"
+                name="" id="ecRadio"></div>
         <input type="button" onclick="draw()" value="Verificar">
     </div>
+    <p id="intentos"></p>
     <p id="resultado"></p>
 </body>
 
