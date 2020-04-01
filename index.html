@@ -45,9 +45,15 @@
         input[type=number],[type=text] {
             width: 40px;
         }
+       .name{
+            width: 100%;
+        }
         @media (min-width: 900px) {
             p{
                 width:34%;
+            }
+            .name{
+                width: 200px;
             }
         }
     </style>
@@ -55,7 +61,10 @@
 
 <body>
     <div class="content">
-            
+        <label for="">Nombre completo:</label> 
+        <input type="text" class="name">
+        <label for="">Grupo:</label>
+        <input type="text">
         <p>Instrucciones:<br>
         Escribe las coordenadas del centro y la medida del radio, para después escribir la ecuación cartesiana de la circunferencia. Presiona el botón para verificar.
         </p>
